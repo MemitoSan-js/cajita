@@ -45,7 +45,7 @@ async function request(endpoint, options = {}) {
   } catch (error) {
     if (error instanceof TypeError) {
       throw new Error(
-        `No se pudo conectar con el backend. Verifica que esté corriendo en ${API_URL}`
+        `No se pudo conectar con el backend. Verifica que esté corriendo en ${API_URL}`, { cause: error }
       );
     }
 
