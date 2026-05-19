@@ -24,8 +24,11 @@ app.use(cors({
 
 app.use(express.json());
 
-app.get("/", (_req, res) => {
-  res.send("Servidor Mi Cajita funcionando");
+app.get("/", (req, res) => {
+  res.json({
+    ok: true,
+    mensaje: "API Cajita funcionando correctamente",
+  });
 });
 
 app.get("/api/health", (_req, res) => {
